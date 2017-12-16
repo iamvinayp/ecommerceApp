@@ -35,8 +35,8 @@ router.post('/products', auth.isAuthenticated, auth.isAdmin, productsController.
 //load a particular product
 router.get('/products/:id', productsController.loadProduct);
 //update a product
-router.put('/products/:id', auth.isAuthenticated, productsController.updateProduct);
+router.put('/products/:id', auth.isAuthenticated, auth.isAdmin, productsController.updateProduct);
 //delete a product
-router.delete('/products/:id', auth.isAuthenticated, productsController.deleteProduct);
+router.delete('/products/:id', auth.isAuthenticated, auth.isAdmin, productsController.deleteProduct);
 
 module.exports = router;
